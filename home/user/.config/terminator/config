@@ -1,0 +1,5 @@
+[profiles]
+  [[default]]
+    background_image = None
+    use_theme_colors = True
+    scrollback_infinite = True

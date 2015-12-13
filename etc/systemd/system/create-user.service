@@ -1,0 +1,10 @@
+[Unit]
+Before=basic.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'getent passwd 1000 || { useradd -G $(getent group | cut -f1 -d: | grep -xE "dialout|wireshark|adm|systemd-journal|floppy|sudo|audio|dip|video|plugdev|staff|users|netdev|fuse|kvm|bluetooth|sambashare|kismet|lpadmin" | tr "\\n" , | sed -e s/,\\$//) -m -s /bin/bash user; passwd -d user; sed -e s/nullok_secure/nullok/ -i /etc/pam.d/common-auth; }'
+
+[Install]
+WantedBy=basic.target

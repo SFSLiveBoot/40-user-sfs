@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Extra applications
+Type=Application
+Exec=nautilus file:///opt/share/applications-extra
+Hidden=true
+Icon=gksu

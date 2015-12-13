@@ -1,0 +1,21 @@
+nameres.load_smi_modules: TRUE
+nameres.suppress_smi_errors: TRUE
+print.format: Postscript
+print.destination: File
+wlan.enable_decryption: TRUE
+gui.column.hidden: 
+gui.column.format: 
+	"No.", "%m",
+	"sz", "%L",
+	"Time", "%t",
+	"Source", "%s",
+	"Destination", "%d",
+	"Protocol", "%p",
+	"Length", "%L",
+	"Info", "%i",
+	"src", "%rhs",
+	"dst", "%rhd"
+gui.gtk2.font_name: Terminus 8
+gui.layout_type: 2
+nameres.transport_name: TRUE
+nameres.use_external_name_resolver: FALSE

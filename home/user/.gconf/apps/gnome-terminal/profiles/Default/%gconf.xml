@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="background_darkness" type="float" value="0.95"/>
+	<entry name="background_type" type="string">
+		<stringvalue>transparent</stringvalue>
+	</entry>
+	<entry name="login_shell" type="bool" value="true"/>
+	<entry name="scrollback_unlimited" type="bool" value="true"/>
+</gconf>

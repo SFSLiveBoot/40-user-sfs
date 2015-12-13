@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/sh -c 'if test -d /opt/share/applications-extra;then v=false; nautilus /opt/share/applications-extra & else v=true;fi;sed /^Hidden=/s/=.*/=$v/ -i $HOME/.local/share/applications/extra-apps.desktop'
+X-GNOME-Autostart-enabled=true
+Name=Toggle visibility of extra-apps.desktop
