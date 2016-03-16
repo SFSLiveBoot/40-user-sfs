@@ -16,6 +16,7 @@ gui.column.format:
 	"src", "%rhs",
 	"dst", "%rhd"
 gui.gtk2.font_name: Terminus 8
+gui.qt.font_name: Terminus,8,-1,5,50,0,0,0,0,0
 gui.layout_type: 2
 nameres.transport_name: TRUE
 nameres.use_external_name_resolver: FALSE
