@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/opt/bin/update-x11-bg.sh monitor
+Exec=conky
 Hidden=false
 X-GNOME-Autostart-enabled=true
-Name=Update X11 bg with current info
+Name=Show IP and other info on wallpaper
