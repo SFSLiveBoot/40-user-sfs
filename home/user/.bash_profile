@@ -14,6 +14,7 @@ case "$TERM" in
     PS1='${debian_chroot:+($debian_chroot)}\[\033[30;1m\][\A]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     trap 'history -a;_h="$(HISTTIMEFORMAT= history 1)"; echo -ne "\x1b]0;$_h $(case "$_h" in *";"*) echo " ($BASH_COMMAND)";;esac)  ($USER@$HOSTNAME: $PWD)\x07"' DEBUG
+    if type _add_status_to_ps1 >/dev/null 2>&1;then _add_status_to_ps1 ;fi
   ;;
 esac
 
