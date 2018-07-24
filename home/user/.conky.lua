@@ -31,3 +31,25 @@ function conky_gwifinfo()
     end
     return table.concat(ret, "\n")
 end
+
+function conky_meminfo_bar()
+    return 100*writeback/(dirty+writeback)
+end
+
+function conky_meminfo()
+    local f = io.open("/proc/meminfo")
+    for l in f:lines() do
+        n, v = string.match(l, '^([^:]+):[ \t]*([0-9]+) kB$')
+        if n == 'Dirty' then
+            dirty = v
+        elseif n=='Writeback' then
+            writeback = v
+        end
+    end
+    f:close()
+    if ((dirty ~= nil or writeback ~= nil) and not (dirty == '0' and writeback == '0')) then
+        return "\n${color grey}Dirty/Write${color} ".. dirty .. "/" .. writeback .. " ${lua_bar meminfo_bar}"
+    else
+        return ""
+    end
+end
