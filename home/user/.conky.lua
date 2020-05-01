@@ -36,6 +36,10 @@ function conky_meminfo_bar()
     return 100*writeback/(dirty+writeback)
 end
 
+function format_size(v)
+    return ((v>=1024*1024*1024) and string.format("%.1fGiB", v/(1024*1024*1024)) or ((v>=1024*1024) and string.format("%.1fMiB", v/(1024*1024))) or ((v>=1024 and string.format("%.1fKiB", v/1024))) or v.."B")
+end
+
 function conky_meminfo()
     local f = io.open("/proc/meminfo")
     for l in f:lines() do
@@ -48,7 +52,7 @@ function conky_meminfo()
     end
     f:close()
     if ((dirty ~= nil or writeback ~= nil) and not (dirty == '0' and writeback == '0')) then
-        return "\n${color grey}Dirty/Write${color} ".. dirty .. "/" .. writeback .. " ${lua_bar meminfo_bar}"
+        return "\n${color grey}Dirty/Write${color} ".. format_size(dirty*1024) .. "/" .. format_size(writeback*1024) .. " ${lua_bar meminfo_bar}"
     else
         return ""
     end
