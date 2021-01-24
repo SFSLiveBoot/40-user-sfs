@@ -1,5 +1,7 @@
 [profiles]
   [[default]]
-    background_image = None
-    use_theme_colors = True
+    visible_bell = True
+    background_color = "#002b36"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#839496"
     scrollback_infinite = True
