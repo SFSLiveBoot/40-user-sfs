@@ -10,7 +10,7 @@ HISTTIMEFORMAT="%Y%m%d %T "
 shopt -s histappend
 
 case "$TERM" in
-  xterm*|rxvt*|screen)
+  xterm*|rxvt*|screen|tmux*)
     PS1='${debian_chroot:+($debian_chroot)}\[\033[30;1m\]\A \[\033[01;32m\]\[\033[00m\]${SSH_CONNECTION:+\[\033[32m\]\h}\[\033[01;34m\][\W]\[\033[00m\]\$ '
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     test "$TERM_PROGRAM" = "vscode" ||
