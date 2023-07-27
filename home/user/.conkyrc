@@ -42,7 +42,7 @@ ${lua_parse gwifinfo}
 $hr
 ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}${lua_parse meminfo}${if_match "$swapmax"!="0B  "}
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}${lua_parse meminfo}${if_match "$swapmax"!="0B"}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}${endif}${if_existing /sys/class/power_supply/BAT0}
 ${color grey}Battery:$color $battery_short ${if_match "$battery_time"!="unknown"}${battery_time}${endif} $battery_bar ${endif}
 ${color grey}CPU Usage:$color $cpu% ${cpubar 4}

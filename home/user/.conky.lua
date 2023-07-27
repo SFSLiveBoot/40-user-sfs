@@ -52,7 +52,7 @@ function conky_meminfo()
     end
     f:close()
     if ((dirty ~= nil or writeback ~= nil) and not (dirty == '0' and writeback == '0')) then
-        return "\n${color grey}Dirty/Write${color} ".. format_size(dirty*1024) .. "/" .. format_size(writeback*1024) .. " ${lua_bar meminfo_bar}"
+        return "\n${color grey}Dirty/Write${color} ".. format_size(dirty*1024) .. "/" .. format_size(writeback*1024)
     else
         return ""
     end
