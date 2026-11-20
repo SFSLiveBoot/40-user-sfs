@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=conky
+Exec=sh -c 'sleep 5;exec conky'
 Hidden=false
 X-GNOME-Autostart-enabled=true
 Name=Show IP and other info on wallpaper
